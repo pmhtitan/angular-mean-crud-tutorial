@@ -1,0 +1,11 @@
+{
+  "name": "node-rest-api",
+  "version": "1.0.0",
+  "description": "Backend crud tutorial Mean Stack with NodeJS, Express and apiRest",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Pablo Moras Hernando",
+  "license": "MIT"
+}

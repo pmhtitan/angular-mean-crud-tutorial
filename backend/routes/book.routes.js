@@ -5,17 +5,6 @@ const express = require('express'); // express
 const bookRoute = express.Router(); // rutas
 let Book = require('../models/Book'); // importamos el modelo Book
 
-// Add Book
-bookRoute.route('/add-book').post((req,res, next) => {
-    Book.create(req.body, (error, data) => {
-        if(error){
-            return next(error);
-        }else{
-            res.json(data);
-        }
-    });
-});
-
 // Get all Books
 bookRoute.route('/').get((req,res) => {
     Book.find((error, data) => {
@@ -26,6 +15,17 @@ bookRoute.route('/').get((req,res) => {
         }
     });
 });
+
+// Add Book
+bookRoute.route('/add-book').post((req,res, next) => {
+    Book.create(req.body, (error, data) => {
+        if(error){
+            return next(error);
+        }else{
+            res.json(data);
+        }
+    });
+}); 
 
 // Get Book
 bookRoute.route('/read-book/:id').get((req, res) => {
